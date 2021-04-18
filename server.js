@@ -14,7 +14,7 @@ const app= express();
 
 //connect to mongoDB
 const db= config.get("mongoURI");
-mongoose.connect(db, { useNewUrlParser: true,useUnifiedTopology: true })
+mongoose.connect(db, { useNewUrlParser: true,useUnifiedTopology: true ,useFindAndModify: false})
     .then(()=> console.log("Database connected "))
     .catch(err=> console.log(err));
 
