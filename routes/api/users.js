@@ -28,9 +28,9 @@ router.post('/register',(req,res)=>{
     User.findOne({ email})
         .then(user=>{
             //if user already exists
-            errors.email=  'Email already exists';
             if(user) {
-                return res.status(400).json({errors}); 
+                errors.email=  'Email already exists';
+                return res.status(400).json(errors); 
             }
             else {
                 const avatar= gravatar.url(email, {
