@@ -47,7 +47,11 @@ module.exports= validateProfileInput= data =>{
             errors.twitter= 'Not a valid URL';
         }
     }
-   
+    if(!isEmpty(data.youtube)){
+        if(!validator.isURL(data.youtube)){
+            errors.youtube= 'Not a valid URL';
+        }
+    }
 
     return {
         errors,

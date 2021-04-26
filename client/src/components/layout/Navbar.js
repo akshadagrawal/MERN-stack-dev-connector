@@ -1,14 +1,18 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import { logout_user } from '../../redux/ducks/auth';
+import { clear_current_profile } from '../../redux/ducks/profile';
 const  Navbar=()=> {
     const dispatch = useDispatch();
     const {isAuthenticated,user} = useSelector(state=> state.auth);
+    const history= useHistory();
 
     const handleLogoutClick=(e)=>{
         e.preventDefault();
         dispatch(logout_user());
+        dispatch(clear_current_profile());
+        history.push('/');
     }
 
     const guestLinks= (
@@ -20,9 +24,10 @@ const  Navbar=()=> {
 
     const authLinks=(
         <>
+            <li><Link to="/dashboard"  style={{textDecoration:"none"}}>Dashboard</Link></li>
             <li>
-                <a 
-                  href="#"
+                <Link
+                    
                   onClick={handleLogoutClick}
                   style={{textDecoration:"none"}}
                 ><img 
@@ -33,7 +38,7 @@ const  Navbar=()=> {
                   className="rounded-circle"
                   />
                   Logout
-                </a>
+                </Link>
             </li>    
         </>
     )

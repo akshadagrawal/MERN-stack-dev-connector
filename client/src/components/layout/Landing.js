@@ -1,11 +1,10 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import {Link, useHistory} from 'react-router-dom';
 
 const Landing=() =>{
 
     const history= useHistory();
-    const dispatch= useDispatch();
     
     const isAuthenticated=  useSelector(state=> state.auth.isAuthenticated);
     if(isAuthenticated)  history.push('/dashboard'); 

@@ -8,6 +8,16 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from "./redux/utils/setAuthToken";
 import { useDispatch } from 'react-redux';
 import { logout_user, set_user } from './redux/ducks/auth';
+import Dashboard from './components/dashboard/Dashboard';
+import { clear_current_profile } from './redux/ducks/profile';
+import PrivateRoute from './components/common/PrivateRoute';
+import CreateProfile from './components/createprofile/CreateProfile';
+import EditProfile from './components/editprofile/EditProfile';
+import AddExperience from './components/addcredentials/AddExperience';
+import AddEducation from './components/addcredentials/AddEducation';
+import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
+import Notfound from './components/notfound/Notfound';
 
 function App() {
 
@@ -26,11 +36,15 @@ function App() {
     dispatch(set_user(decode));
 
     //Check for expired token
-    const currentTime= Date.now();
-    if(decode.exp > currentTime) {
+    const currentTime= Date.now()/1000;
+    
+    if(decode.exp < currentTime) {
 
       //Logout
       dispatch(logout_user());
+
+      //clear curent profile
+      dispatch(clear_current_profile())
 
       //redirect
       window.location.href='/login';
@@ -38,12 +52,11 @@ function App() {
     }
   }
 
-
+ 
   return (
     <div className="App">
       <Router>
       <Navbar /> 
-       <Switch>
          <Route exact path='/'>
           <Landing/>
         </Route>
@@ -53,9 +66,32 @@ function App() {
           </Route>
           <Route path="/register">
               <Register/>
+          </Route> 
+          <Route path="/profiles">
+              <Profiles />
           </Route>
-        </div>
-       </Switch>
+          <Route path="/profile/:handle">
+              <Profile />
+          </Route>
+          <Route path="/not-found">
+              <Notfound />
+          </Route>
+        <Switch>
+          <PrivateRoute path="/dashboard"  component= {Dashboard}/>
+         </Switch>
+         <Switch>
+          <PrivateRoute path="/create-profile"  component= {CreateProfile}/>
+         </Switch>
+         <Switch>
+          <PrivateRoute path="/edit-profile"  component= {EditProfile}/>
+         </Switch>
+         <Switch>
+          <PrivateRoute path="/add-experience"  component= {AddExperience}/>
+         </Switch>
+         <Switch>
+          <PrivateRoute path="/add-education"  component= {AddEducation}/>
+         </Switch>
+       </div>
      </Router>
     </div>
   );

@@ -1,8 +1,9 @@
-import classNames from 'classnames';
+import classnames from 'classnames';
 import {React, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { login_user } from '../../redux/ducks/auth';
+
 
 const Login=()=> {
 
@@ -43,7 +44,7 @@ const Login=()=> {
                         <input
                             type="email"
                             placeholder="Email Address"
-                            className={classNames("form-control form-control-lg", {"is-invalid":errors.email} )}
+                            className={classnames("form-control form-control-lg", {"is-invalid":errors.email} )}
                             name="email"
                             onChange={handleChange}
                         />
@@ -53,7 +54,7 @@ const Login=()=> {
                         <input
                             type="password"
                             placeholder="Password"
-                            className={classNames("form-control form-control-lg", {"is-invalid":errors.password} )}
+                            className={classnames("form-control form-control-lg", {"is-invalid":errors.password} )}
                             name="password"
                             onChange={handleChange}
                         />
