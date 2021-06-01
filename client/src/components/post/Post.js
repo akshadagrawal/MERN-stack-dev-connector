@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { get_post } from '../../redux/ducks/posts';
 import Spinner from '../common/Spinner';
@@ -15,10 +14,9 @@ const Post = (props) => {
 
     const {post,loading}  = useSelector(state=> state.post);
 
-
     useEffect(()=>{
         dispatch(get_post(id)); 
-         
+// eslint-disable-next-line
     },[dispatch]);
 
     const comments=  post.comments;
@@ -42,7 +40,7 @@ const Post = (props) => {
     }
 
     return (
-    <section className="container">
+    <section >
         <Link to="/feed" className="btn">Back To Posts</Link>
         {postContent}
     </section>

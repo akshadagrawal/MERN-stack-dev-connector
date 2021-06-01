@@ -1,7 +1,5 @@
 import React from 'react';
 import Moment from 'react-moment';
-import profileReducer from '../../redux/ducks/profile';
-import ProfileGithub from './ProfileGithub';
 
 const ProfileCreds = ({experience,education}) => {
 

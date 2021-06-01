@@ -27,7 +27,7 @@ const Posts = () => {
     }
     return (
         <>
-             <section className="container">
+             <section >
                 <h1 className="large text-primary">
                     Posts
                 </h1>
@@ -35,7 +35,7 @@ const Posts = () => {
 
                <PostForm/>
                {postContent}
-            </section>
+            </section> 
         </>
     )
 }

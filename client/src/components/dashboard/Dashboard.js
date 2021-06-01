@@ -27,8 +27,8 @@ const Dashboard=()=> {
                 <div>      
                     <p className="lead"><i className="fas fa-user"></i> Welcome  <Link to={`/profile/${profile.handle}`}>{user.name}</Link> </p>                        
                     <ProfileActions/>
-                    {profile.experience.length !=0 && (<Experience experienceArray= {profile.experience}/>)}
-                    {profile.education.length !=0 && (<Education educationArray= {profile.education}/> )}
+                    {profile.experience.length !==0 && (<Experience experienceArray= {profile.experience}/>)}
+                    {profile.education.length !==0 && (<Education educationArray= {profile.education}/> )}
 
                     <div className="my-2">
                         <button className="btn btn-danger" onClick={handleClick}>

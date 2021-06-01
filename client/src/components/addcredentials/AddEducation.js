@@ -35,7 +35,7 @@ const AddEducation = () => {
 
     return (
         <>
-            <section className="container">
+            <section >
                 <h1 className="large text-primary">
                 Add Education
                 </h1>
@@ -139,7 +139,7 @@ const AddEducation = () => {
                         type="submit" 
                         className="btn btn-primary my-1" 
                     />
-                    <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
+                    <Link className="btn btn-light my-1 " to="/dashboard">Go Back</Link>
                 </form>
             </section>
         </>

@@ -94,7 +94,7 @@ const EditProfile = () => {
 
     return (
         <>
-             <section className="container">
+             <section>
                 <h1 className="large text-primary">
                     Edit Your Profile
                 </h1>

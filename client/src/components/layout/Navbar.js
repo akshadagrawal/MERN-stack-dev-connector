@@ -27,7 +27,7 @@ const  Navbar=()=> {
         <>
              <li><Link to="/feed"  style={{textDecoration:"none"}}>Post feed</Link></li>
             <li><Link to="/dashboard"  style={{textDecoration:"none"}}>Dashboard</Link></li>
-            <li>
+            <li  >
                 <Link
                     
                   onClick={handleLogoutClick}

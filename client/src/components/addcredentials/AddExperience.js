@@ -35,7 +35,7 @@ const AddExperience = () => {
 
     return (
         <>
-            <section className="container">
+            <section >
                 <h1 className="large text-primary">
                 Add An Experience
                 </h1>

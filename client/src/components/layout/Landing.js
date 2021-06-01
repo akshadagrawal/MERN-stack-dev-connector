@@ -10,7 +10,7 @@ const Landing=() =>{
     if(isAuthenticated)  history.push('/dashboard'); 
  
     return (
-        <>
+        <> 
              <section className="landing">
                 <div className="dark-overlay">
                     <div className="landing-inner">

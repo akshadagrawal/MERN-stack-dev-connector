@@ -16,27 +16,28 @@ const Profile = () => {
     const params= useParams();
     const {profile,loading}=useSelector(state=> state.profile);
     const dispatch = useDispatch();
-
     useEffect(()=>{
         if(params.handle){
             dispatch(get_profile_by_handle(params.handle));
         }
+        // eslint-disable-next-line
     },[dispatch]);
 
     useEffect(()=>{
         if(profile==null || loading){
             history.push('/not-found');
         }
+   // eslint-disable-next-line
     },[profile])
     
     let profilecontent;
     if(profile==null || loading){
-        profilecontent=<Spinner/>
+        profilecontent=<Spinner/>           
     }
     else {
         profilecontent=(
             <>
-                <Link to="/profiles" class="btn btn-light">Back To Profiles</Link>
+                <Link  to="/profiles" class="btn btn-light">Back To Profiles</Link>
                 
                 <div class="profile-grid my-1">
                     <ProfileHeader profile={profile}/>
@@ -53,7 +54,7 @@ const Profile = () => {
    
     return (
         <>
-                <section class="container">
+                <section >
                 {profilecontent}
                 </section>
           

@@ -33,7 +33,7 @@ const Login=()=> {
 
     return (
         <>
-              <section className="container">
+              <section >
                 {errors.email === 'User not found' && ( <div class="alert alert-danger">
                         Invalid credentials
                 </div>)}

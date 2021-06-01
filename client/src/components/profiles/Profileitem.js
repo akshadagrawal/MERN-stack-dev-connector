@@ -11,6 +11,7 @@ const Profileitem = ({profile}) => {
           <img
             className="round-img"
             src={profile.user.avatar}
+            alt="" 
             
           />
           <div>
@@ -21,7 +22,7 @@ const Profileitem = ({profile}) => {
           </div>
 
           <ul>
-              <li>Skills</li>
+              <li>Skills</li>  
               {profile.skills.slice(0,4).map((skill,index)=>(
                     <li key={index} className="text-primary">
                      <i className="fas fa-check"></i> {skill}

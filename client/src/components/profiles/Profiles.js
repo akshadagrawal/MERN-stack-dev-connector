@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import profileReducer, { get_profiles } from '../../redux/ducks/profile';
+import { get_profiles } from '../../redux/ducks/profile';
 import Spinner from '../common/Spinner';
 import Profileitem from './Profileitem';
 
@@ -32,7 +32,7 @@ const Profiles = () => {
 
     return (
         <>
-            <section className="container">
+            <section>
                 <h1 className="large text-primary">Developers</h1>
                 <p className="lead">
                     <i className="fab fa-connectdevelop"></i> Browse and connect with developers

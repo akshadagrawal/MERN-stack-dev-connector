@@ -45,7 +45,7 @@ const CreateProfile = () => {
 
     return (
         <>
-             <section className="container">
+             <section >
                 <h1 className="large text-primary">
                     Create Your Profile
                 </h1>
