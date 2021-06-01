@@ -43,7 +43,7 @@ if(process.env.NODE_ENV === "production"){
 
 
 // connection
-const port= process.env.port || 6000;
+const port= process.env.PORT || 6000;
 app.listen(port,()=>{
     console.log("Connected"); 
 })    
