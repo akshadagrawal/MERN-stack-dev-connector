@@ -18,6 +18,8 @@ import AddEducation from './components/addcredentials/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Notfound from './components/notfound/Notfound';
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 
 function App() {
 
@@ -61,21 +63,25 @@ function App() {
           <Landing/>
         </Route>
         <div className="container">
-          <Route path="/login">
+          <Route  exact  path="/login">
               <Login />
           </Route>
-          <Route path="/register">
+          <Route  exact  path="/register">
               <Register/>
           </Route> 
-          <Route path="/profiles">
+          <Route  exact  path="/profiles">
               <Profiles />
           </Route>
-          <Route path="/profile/:handle">
+          <Route  exact  path="/profile/:handle">
               <Profile />
           </Route>
-          <Route path="/not-found">
+          {/* <Route  exact  path="/post/:id">
+              <Post />
+          </Route> */}
+          <Route  exact  path="/not-found">
               <Notfound />
           </Route>
+    
         <Switch>
           <PrivateRoute path="/dashboard"  component= {Dashboard}/>
          </Switch>
@@ -91,9 +97,15 @@ function App() {
          <Switch>
           <PrivateRoute path="/add-education"  component= {AddEducation}/>
          </Switch>
+         <Switch>
+          <PrivateRoute path="/feed"  component= {Posts}/>
+         </Switch>
+         <Switch>
+          <PrivateRoute path='/post/:id' component= {Post}/>
+         </Switch>
        </div>
      </Router>
-    </div>
+    </div>  
   );
 }
 

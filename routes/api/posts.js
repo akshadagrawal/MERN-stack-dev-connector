@@ -30,7 +30,8 @@ router.get('/', (req,res)=>{
 
 //@route    GET api/posts/:id
 //@desc     GET post by id
-//Access    Public
+//Access    Public    
+
 
 router.get('/:id', (req,res)=>{
 

@@ -49,7 +49,7 @@ export const login_user= (userData )=> dispatch=>{
         })
         .catch(err=>{
             dispatch({
-                type: GET_ERRORS,
+                type: setA,
                 payload: err.response.data
             })
         })

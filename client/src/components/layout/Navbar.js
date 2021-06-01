@@ -21,9 +21,11 @@ const  Navbar=()=> {
              <li><Link to="/login"  style={{textDecoration:"none"}}>Login</Link></li>
         </>
     )
+              
 
     const authLinks=(
         <>
+             <li><Link to="/feed"  style={{textDecoration:"none"}}>Post feed</Link></li>
             <li><Link to="/dashboard"  style={{textDecoration:"none"}}>Dashboard</Link></li>
             <li>
                 <Link
