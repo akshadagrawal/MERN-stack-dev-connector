@@ -4,7 +4,7 @@ const router= express.Router();
 const gravatar= require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt= require('jsonwebtoken');
-const config= require('config');
+const secretKey= require('../../config/keys').secretKey;
 const passport = require('passport');
 
 //Load validators input
@@ -95,7 +95,7 @@ router.post('/login', (req,res)=>{
                         name: user.name,
                         avatar: user.avatar
                     }
-                    const key = config.get("secretKey")
+                    const key = secretKey
 
                     //sign the token
                     jwt.sign(

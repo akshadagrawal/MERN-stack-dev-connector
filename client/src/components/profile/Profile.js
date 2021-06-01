@@ -25,7 +25,7 @@ const Profile = () => {
 
     useEffect(()=>{
         if(profile==null || loading){
-            history.push('/not-found');
+            history.push('/not-found');  
         }
    // eslint-disable-next-line
     },[profile])

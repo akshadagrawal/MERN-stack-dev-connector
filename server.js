@@ -1,20 +1,18 @@
 const express= require('express');
 const mongoose = require('mongoose');
-const config= require('config');
 const passport = require('passport');
 
 const users= require('./routes/api/users');
 const profile= require('./routes/api/profile');
 const posts= require('./routes/api/posts');
 
-
+const mongoURI= require('./config/keys').mongoURI;
 const app= express();
 
 
 
 //connect to mongoDB
-const db= config.get("mongoURI");
-mongoose.connect(db, { useNewUrlParser: true,useUnifiedTopology: true ,useFindAndModify: false})
+mongoose.connect(mongoURI, { useNewUrlParser: true,useUnifiedTopology: true ,useFindAndModify: false})
     .then(()=> console.log("Database connected "))
     .catch(err=> console.log(err));
 
